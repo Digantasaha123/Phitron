@@ -1,7 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 class Node
-
+//class declaration
+ 
 {
 public:
     int value;
@@ -17,7 +18,7 @@ public:
 
 
 
-void insertAtTail(Node* &head, int val)
+void insertAtTail(Node* &head, int val) //update?
 {
     Node *newNode = new Node(val);
     if (head == NULL){
