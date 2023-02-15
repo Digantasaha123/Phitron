@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-// node class declaration
+// 1. node class declaration
 class Node
 {
 public:
@@ -14,7 +14,7 @@ public:
     }
 };
 
-// value insertion
+// 2. value insertion
 void insertAtTail(Node *&head, int val){
     Node* n = new Node(val); //object creation
     Node* temp = head ;//temporary variable declaration
@@ -33,7 +33,7 @@ void insertAtTail(Node *&head, int val){
 }
 
 
-//printing the linked list 
+//3. printing the linked list 
 void display(Node* head)
 {
     Node* temp = head;
