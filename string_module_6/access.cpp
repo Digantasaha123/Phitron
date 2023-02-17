@@ -6,4 +6,6 @@ int main()
     cin>>str;
     cout<<str.front()<<" "<<str.at(3)<<str.back()<<endl;
     return 0;
+
+    
 }
