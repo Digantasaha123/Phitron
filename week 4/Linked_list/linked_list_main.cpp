@@ -20,7 +20,23 @@ void insertAtTail(Node *&head, int val);
 void insertAtHead(Node *&head, int val);
 void display(Node *value);
 int countLength(Node *&head);
-void insertAtSpecificPosition(Node* &head, int pos, int val)
+void insertAtSpecificPosition(Node *&head, int pos, int val);
+
+
+
+void insertAtSpecificPosition(Node *&head, int pos, int val)
+{
+    int i = 0;
+    Node *temp = head;
+    while (i < pos - 2)
+    {
+        temp = temp->Next;
+        i++;
+    }
+    Node *newNode = new Node(val);
+    newNode->Next = temp->Next;
+}
+
 void insertAtTail(Node *&head, int val) // update?
 {
     Node *newNode = new Node(val);
@@ -80,38 +96,50 @@ int main()
 
     Node *head = NULL;
     int value;
- 
- cout << "choice 0: EXIT" << endl;
-         
+    int position;
+    cout << "choice 0: EXIT" << endl;
+
     cout << "choice 1  insertion at head " << endl;
     cout << "choice 2  Insertion at tail " << endl;
-    cout << "choice 3  Insertion at Specific posotion :       " << endl;
-   
+    cout << "choice 3  Insertion at Specific posotion : " << endl;
+
     cout << "Enter Your choice : ";
     int choice;
     cin >> choice;
     while (choice != 0)
 
     {
-        cout << "Enter the value: ";
-        cin >> value;
+
         switch (choice)
         {
         case 1:
         {
+            cout << "Enter the value: ";
+            cin >> value;
             insertAtHead(head, value);
             break;
         }
         case 2:
         {
+            cout << "Enter the value: ";
+            cin >> value;
             insertAtTail(head, value);
             break;
+        }
+        case 3:
+        {
+            cout << "Enter the desired position :";
+            cin >> position;
+            cout << "Enter the value: ";
+            cin >> value;
+            insertAtSpecificPosition(head, position, value);
         }
         default:
             break;
         }
         cout << "choice 1  insertion at head " << endl;
         cout << "choice 2  Insertion at tail " << endl;
+        cout << "choice 3  Insertion at Specific posotion : " << endl;
         cout << "choice 0: EXIT" << endl
              << endl;
 
@@ -123,12 +151,5 @@ int main()
     cout << "Linked list :" << endl;
     display(head);
     cout << "Length of the Linked List: " << countLength(head);
-    // int value;
-    // cout<<"Enter the value : ";
-
-    // insertAtTail(head, 1);
-    // insertAtTail(head, 5);
-    // insertAtTail(head, 8);
-    // insertAtTail(head, 9);
-    //     display(head);
+    
 }
