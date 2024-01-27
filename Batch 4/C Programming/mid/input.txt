@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main()
+{
+    char str[10001];
+    scanf("%s", str);
+
+    int fqnc[26] = {0};
+    
+    for (int i = 0; str[i] != '\0'; i++)
+    {
+        fqnc[str[i] - 'a']++;
+    }
+
+    for (int i = 0; i < 26; i++)
+    {
+        if (fqnc[i] > 0)
+        {
+            printf("%c - %d\n", i + 'a', fqnc[i]);
+        }
+    }
+
+    return 0;
+}
