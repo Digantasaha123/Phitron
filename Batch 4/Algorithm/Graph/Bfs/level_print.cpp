@@ -1,26 +1,25 @@
 #include <bits/stdc++.h>
 using namespace std;
-// adjacency list(array that has a vector in each index)
 vector<int> v[1005];
-// array to keep track of the visited nodes
+int level[1005];
 bool vis[1005];
 void bfs(int src)
 {
     queue<int> q;
     q.push(src);
     vis[src] = true;
-
+    level[src] = 0;
     while (!q.empty())
     {
         int par = q.front();
         q.pop();
         for (int child : v[par])
         {
-            // cout << child << endl;
             if (!vis[child])
             {
-                q.push(child);
                 vis[child] = true;
+                q.push(child);
+                level[child] = level[par] + 1;
             }
         }
     }
@@ -36,11 +35,18 @@ int main()
         v[a].push_back(b);
         v[b].push_back(a);
     }
-
-    // source to start traversing
-    int src;
-    cin >> src;
     memset(vis, false, sizeof(vis));
-    bfs(src);
+    memset(level, -1, sizeof(level));
+    bfs(0);
+    int x;
+    cin >> x;
+    for (int i = n; i >= 0; i--)
+    {
+        if (level[i] == x)
+        {
+            cout<<i<<" ";
+        }
+    }
+    cout<<endl;
     return 0;
 }

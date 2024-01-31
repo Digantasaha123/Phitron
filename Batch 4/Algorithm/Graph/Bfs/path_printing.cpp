@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
-bool vis[1005];
 vector<int> v[1005];
+bool vis[1005];
 int level[1005];
 int parent[1005];
 void bfs(int src, int des)
@@ -16,10 +16,10 @@ void bfs(int src, int des)
         q.pop();
         for (int child : v[par])
         {
-            if (vis[child] == false)
+            if (!vis[child])
             {
-                q.push(child);
                 vis[child] = true;
+                q.push(child);
                 level[child] = level[par] + 1;
                 parent[child] = par;
             }
@@ -43,17 +43,5 @@ int main()
     memset(level, -1, sizeof(level));
     memset(parent, -1, sizeof(parent));
     bfs(src, des);
-    // for (int i = 0; i < n; i++)
-    //     cout << i << "  -> " << level[i] << endl;
-    int x = des;
-    vector<int> path;
-    while (x != -1)
-    {
-        path.push_back(x);
-        x = parent[x];
-    }
-    reverse(path.begin(), path.end());
-    for (int c : path)
-        cout << c << " ";
     return 0;
 }
