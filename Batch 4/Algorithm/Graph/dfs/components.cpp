@@ -1,13 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 const int N = 1e5 + 5;
-vector<int> v[N];
+vector<int> adj[N];
 vector<int> vis(N, false);
 void dfs(int src)
 {
     vis[src] = true;
     cout << src << endl;
-    for (int child : v[src])
+    for (int child : adj[src])
     {
         if (!vis[child])
             dfs(child);
@@ -21,8 +21,8 @@ int main()
     {
         int a, b;
         cin >> a >> b;
-        v[a].push_back(b);
-        v[b].push_back(a);
+        adj[a].push_back(b);
+        adj[b].push_back(a);
     }
     int c(0);
    

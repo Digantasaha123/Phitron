@@ -1,4 +1,4 @@
-//complexity = o(n*m)
+// complexity = o(n*m)
 #include <bits/stdc++.h>
 using namespace std;
 char a[20][20];
@@ -13,17 +13,16 @@ bool valid(int i, int j)
 }
 void dfs(int si, int sj)
 {
-    cout << si << " " << sj<<endl;
+    cout << si << " " << sj << endl;
     vis[si][sj] = true;
-    for(int i=0; i<4; i++)
+    for (int i = 0; i < 4; i++)
     {
         int ci = si + d[i].first;
         int cj = sj + d[i].second;
-        if(valid(ci,cj) && !vis[ci][cj])
+        if (valid(ci, cj) && !vis[ci][cj])
         {
-            dfs(ci,cj);
+            dfs(ci, cj);
         }
-
     }
 }
 int main()
@@ -35,12 +34,7 @@ int main()
         for (int j = 0; j < m; j++)
             cin >> a[i][j];
     }
-    //  for (int i = 0; i < n; i++)
-    // {
-    //     for (int j = 0; j < m; j++)
-    //         cout<< a[i][j];
-    //     cout << endl; 
-    // }
+  
     int si, sj;
     cin >> si >> sj;
     memset(vis, false, sizeof(vis));
