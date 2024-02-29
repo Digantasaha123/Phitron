@@ -1,56 +1,68 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 const int N = 100;
-vector<pair<int,int>> adj[N];
-vector<int>  dis(N, INT_MAX);
+vector<pair<int, int>> adj[N];
+vector<int> dis(N, INT_MAX);
 class cmp
 {
-    public :
-    bool operator()(pair<int,int>a,pair<int,int> b)
+public:
+    bool operator()(pair<int, int> a, pair<int, int> b)
     {
-        return a.second>b.second;
+        return a.second > b.second;
     }
 };
-void dijkastra(int src)
+
+void dijkstra(int src)
 {
-    priority_queue<pair<int,int>, vector<pair<int,int>>, cmp> pq;
-    pq.push({src,0});
+    priority_queue<pair<int, int>, vector<pair<int, int>>, cmp> pq;
+    pq.push({src, 0});
     dis[src] = 0;
-    while(!pq.empty())
+    while (!pq.empty())
     {
-        pair<int,int> par = pq.top();
+        pair<int, int> par = pq.top();
         pq.pop();
         int node = par.first;
         int cost = par.second;
-        for(pair<int,int>  child : adj[node])
+        for (auto child : adj[node])
         {
             int childNode = child.first;
-            int childCost = child.second;
-            if(cost+childCost<dis[childNode])
+            int childcost = child.second;
+            if(cost + childcost<dis[childNode] )
             {
-                dis[childNode] = cost + childCost;
-                pq.push({childNode,dis[childNode]});
-            } 
+                dis[childNode] = cost + childcost;
+                 pq.push({childNode, dis[childNode]});
+            }
+           
         }
     }
 }
 int main()
 {
-    int n,e;
-    cin>>n>>e;
-    while(e--)
+    int n, s, f;
+    std ::cin >> n >> s >> f;
+    s--;
+    f--;
+    for (int i = 0; i < n; i++)
     {
-        int a,b,c;
-        cin>>a>>b>>c;
-        adj[a].push_back({b,c});
-        adj[b].push_back({a,c});
+        for (int j = 0; j < n; j++)
+        {
+            int w;
+            std ::cin >> w;
+            if (w != -1)
+            {
+                adj[i].push_back({j, w});
+            }
+        }
     }
-    
-    dijkastra(0);
+    dijkstra(s);
+    if (dis[f] == INT_MAX)
+    {
+        cout << -1 << endl;
+    }
+    else
+    {
+        cout << dis[f] << endl;
+    }
 
-    for(int i =0; i<n; i++)
-    {
-        cout<<i<<" -> "<<dis[i]<<endl;
-    }
-        return 0;
+    return 0;
 }

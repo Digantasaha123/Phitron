@@ -50,6 +50,5 @@ int main()
     int si, sj;
     cin >> si >> sj;
     bfs(si, sj);
-    cout<<dis[0][3];
     return 0;
 }
