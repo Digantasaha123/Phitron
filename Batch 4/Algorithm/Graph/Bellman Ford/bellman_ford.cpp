@@ -47,6 +47,7 @@ int main()
                 dis[v] = dis[u] + c;
          }
     }
+    
     }
     for(int i=0; i<n; i++)
     cout<<i<<" -> "<<dis[i]<<endl;
