@@ -1,26 +1,25 @@
 #include <bits/stdc++.h>
 using namespace std;
-const int N = 1005;
+const int N = 20;
 char a[N][N];
 bool vis[N][N];
 int dis[N][N];
 int n, m;
-vector<pair<int, int>> d = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+vector<pair<int, int>> d = {{0, 1}, {0, -1}, {-1, 0}, {1, 0}};
+map<pair<int, int>, pair<int, int>> parent;
 bool valid(int i, int j)
 {
-    if (i < 0 || i >= n || j < 0 || j >= m && a[i][j] == '#')
-        return false;
-    return true;
+    return i >= 0 && i < n && j >= 0 && j < m && a[i][j] != '#';
 }
-void bfs(int si, int sj)
+void bfs(int si, int sj, int di, int dj)
 {
     queue<pair<int, int>> q;
     q.push({si, sj});
     vis[si][sj] = true;
-    dis[si][sj] = 0;
+    parent[{si, sj}] = {-1, -1};
     while (!q.empty())
     {
-        pair<int, int> par = q.front();
+        auto par = q.front();
         q.pop();
         for (int i = 0; i < 4; i++)
         {
@@ -30,35 +29,58 @@ void bfs(int si, int sj)
             {
                 q.push({ci, cj});
                 vis[ci][cj] = true;
-                dis[ci][cj] = dis[par.first][par.second] + 1;
+                parent[{ci, cj}] = par;
             }
         }
     }
 }
 int main()
 {
-    cin >> n >> m;
     int si, sj, di, dj;
+    cin >> n >> m;
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < m; j++)
         {
             cin >> a[i][j];
             if (a[i][j] == 'R')
-                {si = i;
-                 sj = j;}
+            {
+                si = i;
+                sj = j;
+            }
             else if (a[i][j] == 'D')
-               {
-                 di = i;
-                 dj = j;
-               }
+            {
+                di = i;
+                dj = j;
+            }
+        }
+    }
+    bfs(si, sj, di, dj);
+    if (vis[di][dj])
+    {
+        pair<int, int> x = {di, dj};
+        if (parent[{di, dj}] != make_pair(-1, -1))
+        {
+            while (x != make_pair(-1, -1))
+            {
+                if (x == make_pair(si, sj))
+                    break;
+                a[x.first][x.second] = 'X';
+                x = parent[x];
+            }
+            a[si][sj] = 'R';
+            a[di][dj] = 'D';
         }
     }
 
-    memset(vis, false, sizeof(vis));
-    memset(dis, -1, sizeof(dis));
-    bfs(si, sj);
-    cout << si << " " << sj << endl
-         << di << " " << dj << endl;
-         return 0;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            cout << a[i][j];
+        }
+        cout << endl;
+    }
+
+    return 0;
 }
