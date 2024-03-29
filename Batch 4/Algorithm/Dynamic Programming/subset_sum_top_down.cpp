@@ -26,7 +26,13 @@ int main()
         cin >> a[i];
     int s;
     cin >> s;
-    memset(dp, -1, sizeof(dp));
+     for(int i = 0; i<=n; i++)
+    {
+        for(int j = 0; j<=s; j++)
+        {
+            dp[i][j]=-1;
+        }
+    }
     subset_sum(n, a, s);
     if (dp[n][s])
         cout << "YES" << endl;
