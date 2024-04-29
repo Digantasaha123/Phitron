@@ -11,7 +11,7 @@ int knapsack(int n, int weight[], int value[], int W)
         return knapsack(n - 1, weight, value, W);
 }
 int main()
-{
+{   
     int n;
     cin >> n;
     int weight[n], value[n];
