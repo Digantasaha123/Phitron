@@ -1,0 +1,5 @@
+myDictionary={'name':'Ratin','age':27, 'courses':['Database','Python','Django']}
+
+for key,val in myDictionary.items():
+    print(key,val)
+
