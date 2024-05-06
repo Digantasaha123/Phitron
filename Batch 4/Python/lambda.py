@@ -16,6 +16,7 @@ print(list(trippled_nums))
 
 actors = [
     {'name' : 'digu', 'age' : 45},
+    
     {'name' : 'nafi', 'age' : 25},
     {'name' : 'chayon', 'age' : 17},
     {'name' : 'mosta', 'age' : 38},
