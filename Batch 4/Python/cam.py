@@ -4,3 +4,5 @@ while True:
     _, frame = cam.read()
     cv2.imshow('my cam', frame)
     cv2.waitKey(1)
+    if cv2.waitKey(1)== ord('k'):
+        break
