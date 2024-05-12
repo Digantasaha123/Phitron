@@ -7,4 +7,4 @@ for i in range(x):
     dict[ar[i]] = 0
     
 for i in range(x):
-    if 
+    if
