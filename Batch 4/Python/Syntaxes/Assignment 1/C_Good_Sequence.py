@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+a = int(input())
+str = list(map(int,input().split()))
+dic = {}
+for num in dic:
+    if num in dic 
+=======
 n = int(input())
 a = list(map(int, input().split()))
 dic = {}
@@ -15,3 +22,4 @@ for num,cnt in dic.items():
         ans+=cnt
 print(ans)
 for i in num:
+>>>>>>> c7619ac718901649079bd2a585461af4392e5d5e
