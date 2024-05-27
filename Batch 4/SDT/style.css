@@ -1,0 +1,45 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); */
+
+.title1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgb(242, 248, 56);
+    color: red; 
+    text-align: center;
+}
+.title2{
+    color: blueviolet;
+    background-color: aquamarine;
+    text-align: center;
+
+}
+.title3{
+    font: bolder;
+    color: rgb(19, 50, 9);
+    background-color: rgb(125, 246, 4);
+    text-align: center;
+
+}   
+.box{
+    /* height: 200px; */
+    /* width: 200px; */
+    border: 2px solid gray;
+    text-align: center;
+    padding: 10px;
+    margin: 50px;
+}
+.tt{
+    display: inline;
+}
+.description{
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    font-family: "Roboto", sans-serif;
+  font-weight: 150;
+  font-style: normal;
+  background-color: rgb(217, 194, 68);
+}
