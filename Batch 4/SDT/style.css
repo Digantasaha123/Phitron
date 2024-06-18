@@ -25,10 +25,11 @@
     border: 2px solid gray;
     text-align: center;
     padding: 10px;
-    margin: 50px;
+    margin-top: 50px;
 }
 .tt{
     display: inline;
+    color-scheme: red,green,blue;
 }
 .description{
     color: red;
@@ -42,4 +43,60 @@
   font-weight: 150;
   font-style: normal;
   background-color: rgb(217, 194, 68);
+}
+.line-1{
+    width: 150px;
+    height: 150px;
+    border: 2px solid rgb(171, 11, 207);
+    
+}
+.line-2{
+    width: 150px;
+    height: 150px;
+    border: 2px solid royalblue;
+    
+}
+.line-3{
+    width: 150px;
+    height: 150px;
+    border: 2px solid rgb(65, 225, 92);
+    
+}
+.line-4{
+    width: 150px;
+    height: 150px;
+    border: 2px solid rgb(237, 14, 55);
+    
+}
+.line-container{
+    margin-top: 10px;
+    display: flex;
+    /* justify-content: center; */
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    /* justify-content: space-around; */
+    /* justify-content: space-between; */
+    padding: 5px;
+    width : 100%;
+    height: 300px;
+    border: 2px solid goldenrod;
+    align-items: center;
+}
+.banner{
+    height: 400px;
+    width: 600px;
+    border: 2px solid slateblue;
+    /* margin-top: 20px; */
+    margin: auto;
+    background-image: url('https://img.freepik.com/free-vector/halftone-background-with-circles_23-2148907689.jpg?t=st=1718558817~exp=1718562417~hmac=320e0f7655ed7f6a57563160b270c38363b66dd41eb366e89e9f87c2cd7ae3fd&w=826'),linear-gradient(15deg, red, blue);
+    color: white;
+    background-blend-mode: overlay;
+    background-position: center;
+
+}
+button{
+    width: 300px;
+    padding: 30px;
+    background: linear-gradient(15deg, red, blue);
+    color: white;
 }
