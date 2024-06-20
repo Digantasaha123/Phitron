@@ -1,5 +1,12 @@
-body{
-    background-color:rgb(204, 167, 240);
+*{
     margin: 0px;
     padding: 0px;
 }   
+nav{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    background-color: darkgrey;
+.logo{
+    width:100px;
+} 
