@@ -1,12 +1,24 @@
 *{
     margin: 0px;
     padding: 0px;
-}   
+}  
 nav{
     display: flex;
-    justify-content:space-around;
+    justify-content: space-around;
     align-items: center;
-    background-color: darkgrey;
+    background-color: rgb(189, 184, 184);
+}
 .logo{
-    width:100px;
-} 
+    width: 120px;
+}
+li{
+    list-style : none;
+}
+li:hover{
+    color:blue;
+    cursor: pointer;
+}
+.menu-container{
+    display: flex;
+    gap: 15px;
+}
