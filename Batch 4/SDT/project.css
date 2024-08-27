@@ -1,12 +1,19 @@
 *{
+<<<<<<< HEAD
     /* background-color:rgb(204, 167, 240); */
     margin: 0px;
     padding: 0px;
 }   
+=======
+    margin: 0px;
+    padding: 0px;
+}  
+>>>>>>> d64ee0fd7d9a3f7de6da36db111807c8fc89e258
 nav{
     display: flex;
     justify-content: space-around;
     align-items: center;
+<<<<<<< HEAD
     background-color: rgb(188, 186, 184);
     padding: 10px;
 }
@@ -134,4 +141,21 @@ button{
 }
 .submit-btn:hover{
     opacity: 50%;
+=======
+    background-color: rgb(189, 184, 184);
+}
+.logo{
+    width: 120px;
+}
+li{
+    list-style : none;
+}
+li:hover{
+    color:blue;
+    cursor: pointer;
+}
+.menu-container{
+    display: flex;
+    gap: 15px;
+>>>>>>> d64ee0fd7d9a3f7de6da36db111807c8fc89e258
 }
