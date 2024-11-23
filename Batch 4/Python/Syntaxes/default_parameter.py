@@ -1,4 +1,4 @@
-# def sum(a,b,c=0):
+u# def sum(a,b,c=0):
 #     print(a+b+c)
 # sum(1,5)
 def add(*args):
